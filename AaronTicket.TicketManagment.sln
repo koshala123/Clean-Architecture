@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AaronTicket.TicketManagment
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AaronTicket.TicketManagment.Infrastructure", "AaronTicket.TicketManagment.Infrastructure\AaronTicket.TicketManagment.Infrastructure.csproj", "{21C53E7A-311F-4629-98DB-FBB43B9B8D6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AaronTicket.TicketManagment.Api", "AaronTicket.TicketManagment.Api\AaronTicket.TicketManagment.Api.csproj", "{DDBF29BD-65ED-4E53-97BD-F52869A6BB87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AaronTicket.TicketManagment.Api", "AaronTicket.TicketManagment.Api\AaronTicket.TicketManagment.Api.csproj", "{DDBF29BD-65ED-4E53-97BD-F52869A6BB87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AaronTicket.TicketManagment.Application.UnitTesting", "AaronTicket.TicketManagment.Application.UnitTesting\AaronTicket.TicketManagment.Application.UnitTesting.csproj", "{BE6A296B-B6BE-4BCB-BE65-82C9E1027A44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{DDBF29BD-65ED-4E53-97BD-F52869A6BB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDBF29BD-65ED-4E53-97BD-F52869A6BB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDBF29BD-65ED-4E53-97BD-F52869A6BB87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE6A296B-B6BE-4BCB-BE65-82C9E1027A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE6A296B-B6BE-4BCB-BE65-82C9E1027A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE6A296B-B6BE-4BCB-BE65-82C9E1027A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE6A296B-B6BE-4BCB-BE65-82C9E1027A44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{3A148456-AF69-4F3F-9FDC-304ECF754DF7} = {1C5190CF-76E2-4387-9201-6479C07910EC}
 		{21C53E7A-311F-4629-98DB-FBB43B9B8D6A} = {1C5190CF-76E2-4387-9201-6479C07910EC}
 		{DDBF29BD-65ED-4E53-97BD-F52869A6BB87} = {214E182A-6C1B-4AD1-AC13-DFCF031497BA}
+		{BE6A296B-B6BE-4BCB-BE65-82C9E1027A44} = {CC04B990-BD55-459C-B7EC-1D8B604356E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08543DE2-08B5-4EA2-A35F-9EC3882C5F7A}

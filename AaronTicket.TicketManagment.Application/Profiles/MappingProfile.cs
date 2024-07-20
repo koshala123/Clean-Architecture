@@ -6,6 +6,7 @@ using AaronTicket.TicketManagment.Application.Features.Events.Commands.DeleteEve
 using AaronTicket.TicketManagment.Application.Features.Events.Commands.UpdateEvent;
 using AaronTicket.TicketManagment.Application.Features.Events.Queries.GetEventDetail;
 using AaronTicket.TicketManagment.Application.Features.Events.Queries.GetEventList;
+using AaronTicket.TicketManagment.Application.Features.Events.Queries.GetEventsExport;
 using AaronTicket.TicketManagment.Domain.Entities;
 using AutoMapper;
 
@@ -17,15 +18,18 @@ namespace AaronTicket.TicketManagment.Application.Profiles
         {
             CreateMap<Event, EventListVm>().ReverseMap();
             CreateMap<Event, EventDetailVm>().ReverseMap();
-            CreateMap<Category, CategoryDto>();
-            CreateMap<Category, CategoryListVm>();
-            CreateMap<Category, CategoryEventListVm>();
+            CreateMap<Category, CategoryDto>().ReverseMap();
+            CreateMap<Category, CategoryListVm>().ReverseMap();
+            CreateMap<Category, CategoryEventListVm>().ReverseMap();
+
+            CreateMap<Category, CreateCategoryCommand>().ReverseMap();
+            CreateMap<Category, CreateCategoryDto>().ReverseMap();
+            CreateMap<Event, CategoryEventDto>().ReverseMap();
+            CreateMap<Event, EventExportDto>().ReverseMap();
 
             CreateMap<Event, CreateEventCommand>().ReverseMap();
             CreateMap<Event, UpdateEventCommand>().ReverseMap();
             CreateMap<Event, DeleteEventCommand>().ReverseMap();
-
-            CreateMap<Category, CreateCategoryDto>().ReverseMap();
         }
     }
 }

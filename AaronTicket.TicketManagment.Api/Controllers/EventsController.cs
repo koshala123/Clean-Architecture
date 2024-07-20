@@ -1,8 +1,10 @@
-﻿using AaronTicket.TicketManagment.Application.Features.Events.Commands.CreateEvent;
+﻿using AaronTicket.TicketManagment.Api.Utility;
+using AaronTicket.TicketManagment.Application.Features.Events.Commands.CreateEvent;
 using AaronTicket.TicketManagment.Application.Features.Events.Commands.DeleteEvent;
 using AaronTicket.TicketManagment.Application.Features.Events.Commands.UpdateEvent;
 using AaronTicket.TicketManagment.Application.Features.Events.Queries.GetEventDetail;
 using AaronTicket.TicketManagment.Application.Features.Events.Queries.GetEventList;
+using AaronTicket.TicketManagment.Application.Features.Events.Queries.GetEventsExport;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -62,16 +64,12 @@ namespace AaronTicket.TicketManagment.Api.Controllers
         }
 
         [HttpGet("export", Name = "ExportEvents")]
+        [FileResultContentType("text/csv")]
         public async Task<FileResult> ExportEvents()
         {
-            var fileDto = await _mediator.Send(new ExportEventsQuery());
+            var fileDto = await _mediator.Send(new GetEventsExportQuery());
 
             return File(fileDto.Data, fileDto.ContentType, fileDto.EventExportFileName);
-        }
-
-        public IActionResult Index()
-        {
-            return View();
         }
     }
 }

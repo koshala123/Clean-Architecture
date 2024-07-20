@@ -15,10 +15,6 @@ namespace AaronTicket.TicketManagment.Api.Controllers
         {
             _mediator = mediator;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         [HttpGet("all", Name = "GetAllCategories")]
         [ProducesResponseType(StatusCodes.Status200OK)]
