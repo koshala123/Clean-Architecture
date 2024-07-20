@@ -1,1 +1,1 @@
-# AaronTicket.TicketManagment
+# Sample clean Architecture project
