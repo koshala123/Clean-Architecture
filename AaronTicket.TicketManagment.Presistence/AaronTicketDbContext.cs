@@ -1,4 +1,5 @@
-﻿using AaronTicket.TicketManagment.Domain.Common;
+﻿using AaronTicket.TicketManagment.Application.Contracts;
+using AaronTicket.TicketManagment.Domain.Common;
 using AaronTicket.TicketManagment.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,9 +7,17 @@ namespace AaronTicket.TicketManagment.Presistence
 {
     public class AaronTicketDbContext : DbContext
     {
-        public AaronTicketDbContext(DbContextOptions<AaronTicketDbContext> options) : base(options)
+        private readonly ILoggedInUserService? _loggedInUserService;
+        public AaronTicketDbContext(DbContextOptions<AaronTicketDbContext> options)
+            : base(options)
         {
 
+        }
+
+        public AaronTicketDbContext(DbContextOptions<AaronTicketDbContext> options, ILoggedInUserService loggedInUserService)
+            : base(options)
+        {
+            _loggedInUserService = loggedInUserService;
         }
 
         public DbSet<Event> Events { get; set; }
@@ -190,9 +199,11 @@ namespace AaronTicket.TicketManagment.Presistence
                 {
                     case EntityState.Added:
                         entry.Entity.CreatedDate = DateTime.Now;
+                        entry.Entity.CreatedBy = _loggedInUserService.UserId;
                         break;
                     case EntityState.Modified:
                         entry.Entity.LastModifiedDate = DateTime.Now;
+                        entry.Entity.LastModifiedBy = _loggedInUserService.UserId;
                         break;
                 }
             }

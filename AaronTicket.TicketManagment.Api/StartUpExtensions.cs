@@ -1,4 +1,6 @@
-﻿using AaronTicket.TicketManagment.Application;
+﻿using AaronTicket.TicketManagment.Api.Services;
+using AaronTicket.TicketManagment.Application;
+using AaronTicket.TicketManagment.Application.Contracts;
 using AaronTicket.TicketManagment.Infrastructure;
 using AaronTicket.TicketManagment.Presistence;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +14,9 @@ namespace AaronTicket.TicketManagment.Api
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddPersistenceServices(builder.Configuration);
+
+            builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
+            builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddControllers();
 
